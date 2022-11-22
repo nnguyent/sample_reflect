@@ -155,17 +155,3 @@ func TestSanitize(t *testing.T) {
 		})
 	}
 }
-
-func Foo(s *[]string) {
-	fmt.Printf("s: %p, %v\n", s, s)
-	// s = []string{"a", "b"}
-	*s = append(*s, "a")
-	*s = append(*s, "b")
-	fmt.Printf("s: %p, %v\n", s, s)
-}
-
-func TestSlice(t *testing.T) {
-	slice := []string{}
-	Foo(&slice)
-	fmt.Printf("s: %p, %v\n", slice, slice)
-}
